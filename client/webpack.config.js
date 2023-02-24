@@ -26,17 +26,18 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|webp)$/i,
-        use: {
-          loader: "url-loader",
-          options: {
-            limit: 8192,
-            name: "static/media/[name].[contenthash].[ext]",
-          },
-        },
+        type: "asset/resource",
+        generator: {
+          filename: 'images/thumbnails/[name]-[hash][ext]'
+      }
       },
       {
         test: /\.svg/,
         use: "@svgr/webpack",
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },

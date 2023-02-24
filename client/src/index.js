@@ -1,10 +1,11 @@
+import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from './pages/App.jsx';
+import './styles/index.css';
 
-function Index() {
-  return <h1>Hello, world!</h1>;
-}
 
-ReactDOM.render(<Index />, document.getElementById("root"));
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById("root"));
 
 if (module.hot) {
   module.hot.accept();
